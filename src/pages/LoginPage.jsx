@@ -26,7 +26,7 @@ function LoginPage() {
           <strong>Menyenangkan</strong>
           {' '}
           <br />
-          dengan Threads
+          dengan Threads App
         </h2>
 
         <LoginInput login={onLogin} />
