@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /**
  * Login spec
  * - should display login page correctly
@@ -8,11 +9,11 @@
  */
 
 describe('Login spec', () => {
-    beforeEach(() => {
+  beforeEach(() => {
     cy.visit('http://localhost:5173/');
   });
 
-  it('should display login page correctly', () => { 
+  it('should display login page correctly', () => {
     // memverifikasi elemen yang harus tampak pada halaman login
     cy.get('input[placeholder="Email"]').should('be.visible');
     cy.get('input[placeholder="Password"]').should('be.visible');
@@ -23,17 +24,17 @@ describe('Login spec', () => {
   it('should display alert when password is empty', () => {
     // mengisi username
     cy.get('input[placeholder="Email"]').type('testuser');
- 
+
     // klik tombol login tanpa mengisi password
     cy.get('button').contains(/^Login$/).click();
- 
+
     // memverifikasi window.alert untuk menampilkan pesan dari API
     cy.on('window:alert', (str) => {
       expect(str).to.equal('"password" is not allowed to be empty');
     });
   });
 
-  
+
 
 
 
